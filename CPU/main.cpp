@@ -37,6 +37,15 @@ void parseCmd(int argc, char *argv[], int &w, int &h)
         {
             cout << "Expected a number for the width. Set to 500" << endl;
         }
+        catch(out_of_range &excp){
+            cout << "Width was too big for stoi to handle. Set to 500" << endl;
+        }
+        if (w < 0 || w > 1200)
+        {
+            cout << "Expected a positive number less than 1201 for the width. Set to 500" << endl;
+            w = 500;
+        }
+
 
         try
         {
@@ -46,12 +55,9 @@ void parseCmd(int argc, char *argv[], int &w, int &h)
         {
             cout << "Expected a number for the height. Set to 500" << endl;
         }
-
-        if (w < 0 || w > 1200)
-        {
-            cout << "Expected a positive number less than 1201 for the width. Set to 500" << endl;
-            w = 500;
-        }
+        catch(out_of_range &excp){
+            cout << "Height was too big for stoi to handle. Set to 500" << endl;
+        }        
         if (h < 0 || h > 1200)
         {
             cout << "Expected a positive number less than 1201 for the height. Set to 500" << endl;

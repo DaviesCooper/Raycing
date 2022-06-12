@@ -1,5 +1,4 @@
 #include "renderer.h"
-#include "sphere.h"
 
 Renderer::Renderer(int size) : Renderer::Renderer(size, size)
 {
